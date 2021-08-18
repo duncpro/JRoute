@@ -1,6 +1,8 @@
 # JRoute
 Extremely barebones URL router for Java.
 
+[![Build Status](https://www.travis-ci.com/duncpro/JRoute.svg?branch=master)](https://www.travis-ci.com/duncpro/JRoute)
+
 ## FAQ
 - The included implementation of `Router`, `TreeRouter`, is not thread-safe for mutations.
 It can however be safely used by multiple threads simultaneously if the threads are only
