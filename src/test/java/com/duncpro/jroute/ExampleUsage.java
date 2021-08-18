@@ -24,8 +24,6 @@ public class ExampleUsage {
         router.addRoute(HttpMethod.GET, "/calculator/add/*/*", (request, pathArgs) -> {
             final var x = Integer.parseInt(pathArgs.get(0));
             final var y = Integer.parseInt(pathArgs.get(1));
-            // Lookup the age of the pet in the database
-            // We'll fake it for now
             return x + y;
         });
 
