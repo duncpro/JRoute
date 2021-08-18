@@ -81,11 +81,11 @@ See `com.duncpro.jroute.router.Router`.
 
 ### Path Element
 The smallest unit of a path. Path units are separated by slashes.
-Paths take the form of `path unit/path unit/` etc.
+Paths take the form of `path element/path element/` etc.
 
 In JRoute these are represented by `String`.
 
 ### Route Element
 The smallest unit of a route. Like Path elements, Route elements are separated by slashes.
 The differentiating factor between Route elements and Path elements is that `*` has a special
-meaning as a Route element. It is a wildcard and matches any *path unit*.
+meaning as a Route element. It is a wildcard and matches any *path element*.
