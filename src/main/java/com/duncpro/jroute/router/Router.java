@@ -19,7 +19,7 @@ public interface Router<E> {
      * Assigns the given endpoint responsibility for requests made with the given {@link HttpMethod}
      * to paths matching the given {@code routeString}.
      *
-     * @param method the http method to bind to this handler . It's perfectly valid to call this function multiple
+     * @param method the http method to bind to this endpoint . It's perfectly valid to call this function multiple
      *               times with the same route but different {@link HttpMethod}s. This is useful for handling multiple
      *               request types with a single endpoint.
      * @param routeString a path-like string describing which paths this handler is responsible for. Examples include:
