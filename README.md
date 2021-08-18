@@ -2,7 +2,7 @@
 Extremely barebones URL router for Java.
 
 [![Build Status](https://www.travis-ci.com/duncpro/JRoute.svg?branch=master)](https://www.travis-ci.com/duncpro/JRoute)
-[![Coverage Status](https://coveralls.io/repos/github/duncpro/JRoute/badge.svg?branch=master)](https://coveralls.io/github/duncpro/JRoute?branch=master)
+[![codecov](https://codecov.io/gh/duncpro/JRoute/branch/master/graph/badge.svg?token=01IKEI8IW6)](https://codecov.io/gh/duncpro/JRoute)
 
 ## FAQ
 - The included implementation of `Router`, `TreeRouter`, is not thread-safe for mutations.
