@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class TreeRouterTest {
     @Test
     void createAndLookupRoute() {
-        final var tree = RouteTreeNode.newTree();
+        final var tree = new RouteTreeNode<>(RouteTreeNodePosition.root());
 
         final var expectedEndpoint = 1;
 

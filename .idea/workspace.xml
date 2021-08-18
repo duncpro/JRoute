@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="377cceba-08b5-47e5-aead-ba5d96f09aa9" name="Default Changelist" comment="coveralls -&gt; codecov">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/RouteTreeNodePosition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/duncpro/jroute/ExampleUsage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/duncpro/jroute/ExampleUsage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/Path.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/RouteConflictException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/RouteConflictException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/route/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/route/Route.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/RouteTreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/RouteTreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/TreeRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/TreeRouter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/duncpro/jroute/router/TreeRouterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/duncpro/jroute/router/TreeRouterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="26300" />
+    <option name="totalTimeSeconds" value="27706" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -57,6 +62,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1wtZ5XiJ0VuVaAyJZwgORYVPmBX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -87,12 +100,12 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.duncpro.jroute.router" />
       <recent name="com.duncpro.jroute" />
       <recent name="com.duncpro.jroute.route" />
-      <recent name="com.duncpro.jroute.router" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'JRoute.test'">
+  <component name="RunManager" selected="Gradle.RouteTreeNodeTest">
     <configuration name="ExampleUsage" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -114,12 +127,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RouteTest.extractPathVariables" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RouteTreeNodeTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.duncpro.jroute.route.RouteTest.extractPathVariables&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.duncpro.jroute.router.RouteTreeNodeTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -156,12 +169,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TreeRouterTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TreeRouterTest.conflictDuplicateStaticChildren" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.duncpro.jroute.router.TreeRouterTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.duncpro.jroute.router.TreeRouterTest.conflictDuplicateStaticChildren&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -200,11 +213,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.RouteTreeNodeTest" />
+        <item itemvalue="Gradle.TreeRouterTest.conflictDuplicateStaticChildren" />
         <item itemvalue="Gradle.Tests in 'JRoute.test'" />
         <item itemvalue="Gradle.ExampleUsage" />
         <item itemvalue="Gradle.TreeRouterTest.routeResultHasCorrectRoute" />
-        <item itemvalue="Gradle.RouteTest.extractPathVariables" />
-        <item itemvalue="Gradle.TreeRouterTest" />
       </list>
     </recent_temporary>
   </component>

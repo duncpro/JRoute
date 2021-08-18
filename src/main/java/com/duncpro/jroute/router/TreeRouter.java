@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @NotThreadSafe
 public class TreeRouter<E> implements Router<E> {
-    private final RouteTreeNode<E> rootRoute = RouteTreeNode.newTree();
+    private final RouteTreeNode<E> rootRoute = new RouteTreeNode<>(RouteTreeNodePosition.root());
 
     @Override
     public Optional<RouterResult<E>> route(HttpMethod method, String path) {
@@ -32,13 +32,13 @@ public class TreeRouter<E> implements Router<E> {
         if (path.isRoot()) return Optional.of(routeTree);
 
         return routeTree.matchChildRoute(path.getElements().get(0))
-                .flatMap(child -> findNode(child, path.withoutFirstElement()));
+                .flatMap(child -> findNode(child, path.withoutLeadingElement()));
     }
 
     protected static <E> RouteTreeNode<E> findOrCreateNode(RouteTreeNode<E> routeTree, Route route) {
         if (route.isRoot()) return routeTree;
 
         final var child = routeTree.getOrCreateChildRoute(route.getElements().get(0));
-        return findOrCreateNode(child, route.withoutFirstElement());
+        return findOrCreateNode(child, route.withoutLeadingElement());
     }
 }

@@ -9,11 +9,9 @@ public class Path {
     private final List<String> elements;
 
     public Path(String pathString) {
-        this(
-                Stream.of(pathString.split(Pattern.quote("/")))
-                        .filter(e -> !e.isEmpty()) // Account for leading slash
-                        .collect(Collectors.toList())
-        );
+        this.elements = Stream.of(pathString.split(Pattern.quote("/")))
+                .filter(e -> !e.isEmpty()) // Account for leading slash
+                .collect(Collectors.toUnmodifiableList());
     }
 
     protected Path(List<String> elements) {
@@ -24,7 +22,8 @@ public class Path {
         return elements;
     }
 
-    public Path withoutFirstElement() {
+    public Path withoutLeadingElement() {
+        if (elements.isEmpty()) throw new IllegalStateException();
         final var newElements = new ArrayList<>(elements);
         newElements.remove(0);
         return new Path(newElements);

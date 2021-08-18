@@ -36,7 +36,8 @@ public class Route {
 
     public static Route ROOT = new Route(List.of());
 
-    public Route withoutFirstElement() {
+    public Route withoutLeadingElement() {
+        if (elements.isEmpty()) throw new IllegalArgumentException();
         final var newElements = new ArrayList<>(elements);
         newElements.remove(0);
         return new Route(newElements);
