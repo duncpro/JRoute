@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="377cceba-08b5-47e5-aead-ba5d96f09aa9" name="Default Changelist" comment="coveralls -&gt; codecov">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/TreeRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/TreeRouter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="30544" />
+    <option name="totalTimeSeconds" value="30706" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>

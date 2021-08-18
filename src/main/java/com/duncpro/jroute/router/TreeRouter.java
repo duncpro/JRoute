@@ -38,7 +38,7 @@ public class TreeRouter<E> implements Router<E> {
 
     /**
      * A variant of {@link TreeRouter#findNode(RouteTreeNode, Path)} which will add new branches to the
-     * route tree if necessary so that the {@link Route} may be resolved to {@link RouteTreeNode}. If no nodes
+     * route tree if necessary so that the {@link Route} may be resolved to a {@link RouteTreeNode}. If no nodes
      * need to be added then this function is analogous to the aforementioned one. Finally this function returns
      * the {@link RouteTreeNode} corresponding to the last {@link RouteElement} in the {@link Route}.
      */
