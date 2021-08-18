@@ -1,5 +1,6 @@
 plugins {
     java
+    jacoco
 }
 
 group = "com.duncpro"
@@ -18,4 +19,20 @@ dependencies {
 
 tasks.getByName<Test>("test") {
     useJUnitPlatform()
+}
+
+val jacocoTestReport by tasks.getting(JacocoReport::class) {
+    classDirectories.setFrom(sourceSets.main.get().output)
+    sourceDirectories.setFrom(sourceSets.main.get().allSource.srcDirs)
+    executionData.setFrom(fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec"))
+    reports {
+        xml.isEnabled = true
+        html.isEnabled = false
+    }
+    sourceSets {
+        add(main.get())
+    }
+}
+tasks.check {
+    finalizedBy(jacocoTestReport)
 }
