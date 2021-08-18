@@ -34,6 +34,32 @@ public class Route {
                 .collect(toUnmodifiableList());
     }
 
+    /**
+     * Compiles a list of all the arguments contained within the given path.
+     * For example, consider the route string "/users/*\/pets/*" and the path "/users/duncan/pets/cocoa".
+     * The returned list would be ["duncan", "cocoa"].
+     * @throws IllegalStateException if the given {@code pathString} is not of the same form as this route.
+     */
+    public List<String> extractVariables(String pathString) throws IllegalStateException {
+        final var path = new Path(pathString);
+
+        if (!JRouteUtilities.accepts(path, this)) {
+            throw new IllegalArgumentException("The given path does not follow the" +
+                    " form of this route.");
+        }
+
+        final var pathVariables = new ArrayList<String>();
+        for (int i = 0; i < elements.size(); i++) {
+            final var routeElement = this.getElements().get(i);
+
+            if (routeElement instanceof WildcardRouteElement) {
+                final var pathElement = path.getElements().get(i);
+                pathVariables.add(pathElement);
+            }
+        }
+        return pathVariables;
+    }
+
     public static Route ROOT = new Route(List.of());
 
     public Route withoutLeadingElement() {
@@ -54,26 +80,6 @@ public class Route {
     public List<RouteElement> getElements() { return elements; }
 
     public boolean isRoot() { return elements.isEmpty(); }
-
-    public List<String> extractVariables(String pathString) {
-        final var path = new Path(pathString);
-
-        if (!JRouteUtilities.accepts(path, this)) {
-            throw new IllegalArgumentException("The given path does not follow the" +
-                    " form of this route.");
-        }
-
-        final var pathVariables = new ArrayList<String>();
-        for (int i = 0; i < elements.size(); i++) {
-            final var routeElement = this.getElements().get(i);
-
-            if (routeElement instanceof WildcardRouteElement) {
-                final var pathElement = path.getElements().get(i);
-                pathVariables.add(pathElement);
-            }
-        }
-        return pathVariables;
-    }
 
     @Override
     public String toString() {
