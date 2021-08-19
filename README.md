@@ -25,21 +25,18 @@ The third parameter of `addRoute` is the endpoint. For the sake of brevity we wi
 number for each request instead of looking up the user's actual age in a database.
 ### Process Inbound Requests
 ```java
-final Optional<RouterResult<Supplier<Integer>>> result = router
-        .route(HttpMethod.GET, "/users/duncpro/age");
+final Optional<RouterResult<Supplier<Integer>>> result = router.route(HttpMethod.GET, "/users/duncpro/age");
 ```
 An empty optional is returned if no route matches the given path. In this case there is obviously a match since
 we just registered a route for this path above. In practice you should present a 404 page if a path
 cannot be routed, but for the sake of brevity we will skip that step.
 ```java
-final Supplier<Integer> endpoint = result
-        .orElseThrow(AssertionError::new).getEndpoint();
+final Supplier<Integer> endpoint = result.orElseThrow(AssertionError::new).getEndpoint();
 ```
 In addition to the endpoint, `RouterResult` also contains the `Route` object which matched
 the given path. This can be used to extract the values passed in for variable route elements.
 ```java
-final List<String> pathArguments = result.orElseThrow(AssertionError::new)
-        .getRoute()
+final List<String> pathArguments = result.orElseThrow(AssertionError::new).getRoute()
         .extractVariables("/users/duncpro/age");
 
 assertEquals(pathArguments, List.of("duncpro"));
