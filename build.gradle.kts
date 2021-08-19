@@ -1,6 +1,7 @@
 plugins {
     java
     jacoco
+    `maven-publish`
 }
 
 group = "com.duncpro"
@@ -33,6 +34,15 @@ val jacocoTestReport by tasks.getting(JacocoReport::class) {
         add(main.get())
     }
 }
+
 tasks.check {
     finalizedBy(jacocoTestReport)
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+        }
+    }
 }
