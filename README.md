@@ -3,6 +3,7 @@ Barebones URL router for Java.
 
 [![Build Status](https://www.travis-ci.com/duncpro/JRoute.svg?branch=master)](https://www.travis-ci.com/duncpro/JRoute)
 [![codecov](https://codecov.io/gh/duncpro/JRoute/branch/master/graph/badge.svg?token=01IKEI8IW6)](https://codecov.io/gh/duncpro/JRoute)
+[![](https://jitpack.io/v/com.duncpro/jroute.svg)](https://jitpack.io/#com.duncpro/jroute)
 
 ## Example Usage
 ### Create a Router
