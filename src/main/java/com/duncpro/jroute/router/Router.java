@@ -1,19 +1,24 @@
 package com.duncpro.jroute.router;
 
 import com.duncpro.jroute.HttpMethod;
+import com.duncpro.jroute.Path;
 import com.duncpro.jroute.RouteConflictException;
 import com.duncpro.jroute.route.Route;
 
 import java.util.Optional;
 
 public interface Router<E> {
+    default Optional<RouterResult<E>> route(HttpMethod method, String pathString) {
+        return route(method, new Path(pathString));
+    }
+
     /**
      * Finds the {@link Route} and endpoint ({@link E}) which has been assigned responsibility for requests made to the
-     * given path using the given {@link HttpMethod}. Routes must be registered with the router in advance using
-     * {@link #addRoute(HttpMethod, String, Object)}. If no route exists for the given method and path then an empty
-     * optional is returned instead.
+     * given {@link Path} using the given {@link HttpMethod}. Routes must be registered with the router in advance using
+     * {@link #addRoute(HttpMethod, String, Object)} or similar. If no route exists for the given method and path then
+     * an empty optional is returned instead.
      */
-    Optional<RouterResult<E>> route(HttpMethod method, String path);
+    Optional<RouterResult<E>> route(HttpMethod method, Path path);
 
     /**
      * Assigns the given endpoint responsibility for requests made with the given {@link HttpMethod}

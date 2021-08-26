@@ -14,8 +14,8 @@ public class TreeRouter<E> implements Router<E> {
     private final RouteTreeNode<E> rootRoute = new RouteTreeNode<>(RouteTreeNodePosition.root());
 
     @Override
-    public Optional<RouterResult<E>> route(HttpMethod method, String path) {
-        return findNode(rootRoute, new Path(path))
+    public Optional<RouterResult<E>> route(HttpMethod method, Path path) {
+        return findNode(rootRoute, path)
                 .flatMap(node -> node.getEndpointAsRouterResult(method));
     }
 
