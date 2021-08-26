@@ -56,4 +56,14 @@ class RouteTest {
                 route.extractVariables(path)
         );
     }
+
+    @Test
+    void resolve() {
+        final var initial = new Route("/users/*");
+        final var suffix = new Route("/pets/*");
+        final var expected = new Route("/users/*/pets/*");
+
+        final var actual = initial.resolve(suffix);
+        assertEquals(expected, actual);
+    }
 }

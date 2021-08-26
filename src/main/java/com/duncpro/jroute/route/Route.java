@@ -62,6 +62,14 @@ public class Route {
 
     public static Route ROOT = new Route(List.of());
 
+    public Route resolve(Route suffix) {
+        var newRoute = this;
+        for (RouteElement element : suffix.getElements()) {
+            newRoute = newRoute.withTrailingElement(element);
+        }
+        return newRoute;
+    }
+
     public Route withoutLeadingElement() {
         if (elements.isEmpty()) throw new IllegalArgumentException();
         final var newElements = new ArrayList<>(elements);
@@ -74,6 +82,13 @@ public class Route {
         final var newElements = new ArrayList<RouteElement>();
         newElements.add(element);
         newElements.addAll(this.elements);
+        return new Route(newElements);
+    }
+
+    public Route withTrailingElement(RouteElement element) {
+        if (element == null) throw new IllegalArgumentException();
+        final var newElements = new ArrayList<>(this.elements);
+        newElements.add(element);
         return new Route(newElements);
     }
 
