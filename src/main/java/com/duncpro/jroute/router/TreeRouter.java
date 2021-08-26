@@ -20,8 +20,8 @@ public class TreeRouter<E> implements Router<E> {
     }
 
     @Override
-    public void addRoute(HttpMethod method, String routeString, E endpoint) throws RouteConflictException {
-        final var node = findOrCreateNode(rootRoute, new Route(routeString));
+    public void addRoute(HttpMethod method, Route route, E endpoint) throws RouteConflictException {
+        final var node = findOrCreateNode(rootRoute, route);
         node.addEndpoint(method, endpoint);
     }
 

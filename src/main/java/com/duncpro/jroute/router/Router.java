@@ -30,5 +30,9 @@ public interface Router<E> {
      * @throws RouteConflictException if the given {@code routeString} overlaps another pre-existing route. The route
      *  will not be overwritten.
      */
-    void addRoute(HttpMethod method, String routeString, E endpoint) throws RouteConflictException;
+    default void addRoute(HttpMethod method, String routeString, E endpoint) throws RouteConflictException {
+        addRoute(method, new Route(routeString), endpoint);
+    }
+
+    void addRoute(HttpMethod method, Route route, E endpoint) throws RouteConflictException;
 }

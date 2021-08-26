@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="377cceba-08b5-47e5-aead-ba5d96f09aa9" name="Default Changelist" comment="add publication">
+    <list default="true" id="377cceba-08b5-47e5-aead-ba5d96f09aa9" name="Default Changelist" comment="add Route.resolve">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/route/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/route/Route.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/TreeRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/TreeRouter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="33769" />
+    <option name="totalTimeSeconds" value="34177" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -94,9 +95,9 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.duncpro.jroute.route" />
       <recent name="com.duncpro.jroute.router" />
       <recent name="com.duncpro.jroute" />
-      <recent name="com.duncpro.jroute.route" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.RouteTest.resolve">
@@ -240,7 +241,8 @@
     <MESSAGE value="better readme" />
     <MESSAGE value="add jitpack badge" />
     <MESSAGE value="add publication" />
-    <option name="LAST_COMMIT_MESSAGE" value="add publication" />
+    <MESSAGE value="add Route.resolve" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Route.resolve" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/JRoute$Tests_in__JRoute_test_.ic" NAME="Tests in 'JRoute.test' Coverage Results" MODIFIED="1629273506587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
