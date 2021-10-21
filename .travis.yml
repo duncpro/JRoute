@@ -1,5 +1,14 @@
 language: java
 script:
-  - ./gradlew check --info
+  - ./gradlew check javadoc --info
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+deploy:
+  provider: pages
+  target_branch: gh-pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  local_dir: build/docs/javadoc
+  on:
+    branch: master

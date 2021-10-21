@@ -5,7 +5,7 @@ Barebones URL router for Java.
 [![codecov](https://codecov.io/gh/duncpro/JRoute/branch/master/graph/badge.svg?token=01IKEI8IW6)](https://codecov.io/gh/duncpro/JRoute)
 [![](https://jitpack.io/v/com.duncpro/jroute.svg)](https://jitpack.io/#com.duncpro/jroute)
 
-## Example Usage
+## Usage Guide
 ### Create a Router
 ```java
 final Router<Supplier<Integer>> router = new TreeRouter<>();
@@ -49,3 +49,5 @@ All classes are marked with JCIP annotations describing the level of thread-safe
 Notably `TreeRouter` is not thread safe for mutations. Consider wrapping it in a `ReadWriteLock` if you wish
 to add routes concurrently. In practice route registration typically only happens at startup and the process is quick 
 enough that multi-threading is unnecessary.
+## Docs
+There is a Javadoc for this library [here](https://duncpro.github.io/JRoute).
