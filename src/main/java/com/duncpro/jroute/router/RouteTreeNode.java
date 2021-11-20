@@ -8,6 +8,7 @@ import com.duncpro.jroute.route.WildcardRouteElement;
 import net.jcip.annotations.NotThreadSafe;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 @NotThreadSafe
 class RouteTreeNode<E> {
@@ -17,6 +18,24 @@ class RouteTreeNode<E> {
 
     protected RouteTreeNode(RouteTreeNodePosition<E> position) {
         this.position = position;
+    }
+
+    /**
+     * Returns a {@link Stream} containing all endpoints which are defined at this {@link RouteTreeNode}
+     * as well as all {@link RouteTreeNode}s descending from the given {@link RouteTreeNode}s.
+     */
+    static <E> Set<PositionedEndpoint<E>> getAllEndpoints(RouteTreeNode<E> root) {
+        final var endpoints = new HashSet<PositionedEndpoint<E>>();
+
+        root.endpoints.entrySet().stream()
+                .map(e -> new PositionedEndpoint<E>(root.position.getRoute(), e.getKey(), e.getValue()))
+                .forEach(endpoints::add);
+
+        root.children.stream()
+                .flatMap(child -> RouteTreeNode.getAllEndpoints(child).stream())
+                .forEach(endpoints::add);
+
+        return endpoints;
     }
 
     private boolean hasGreedyChild() {
@@ -47,6 +66,12 @@ class RouteTreeNode<E> {
         children.add(childNode);
     }
 
+    Optional<RouteTreeNode<E>> getChildRoute(RouteElement trailingRouteElement) {
+        return children.stream()
+                .filter(child -> child.position.getRouteElement().equals(trailingRouteElement))
+                .findFirst();
+    }
+
     RouteTreeNode<E> getOrCreateChildRoute(RouteElement trailingRouteElement) {
         return children.stream()
                 .filter(child -> Objects.equals(child.position.getRouteElement(), trailingRouteElement))
@@ -59,8 +84,9 @@ class RouteTreeNode<E> {
     }
 
     void addEndpoint(HttpMethod method, E endpoint) {
+        if (endpoint == null) throw new IllegalArgumentException();
         final var prev = endpoints.putIfAbsent(method, endpoint);
-        if (prev != null) throw new IllegalStateException("Endpoint already bound to method: " + method.name());
+        if (prev != null) throw new IllegalStateException("PositionedEndpoint already bound to method: " + method.name());
     }
 
     Optional<RouterResult<E>> getEndpointAsRouterResult(HttpMethod method) {

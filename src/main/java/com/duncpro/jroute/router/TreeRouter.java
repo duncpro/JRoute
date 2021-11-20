@@ -7,7 +7,7 @@ import com.duncpro.jroute.route.Route;
 import com.duncpro.jroute.route.RouteElement;
 import net.jcip.annotations.NotThreadSafe;
 
-import java.util.Optional;
+import java.util.*;
 
 @NotThreadSafe
 public class TreeRouter<E> implements Router<E> {
@@ -23,6 +23,25 @@ public class TreeRouter<E> implements Router<E> {
     public void addRoute(HttpMethod method, Route route, E endpoint) throws RouteConflictException {
         final var node = findOrCreateNode(rootRoute, route);
         node.addEndpoint(method, endpoint);
+    }
+
+    @Override
+    public Set<PositionedEndpoint<E>> getAllEndpoints(Route prefix) {
+        return findNode(prefix)
+                .map(RouteTreeNode::getAllEndpoints)
+                .orElse(Collections.emptySet());
+    }
+
+    private Optional<RouteTreeNode<E>> findNode(Route route) {
+        RouteTreeNode<E> prefixNode = rootRoute;
+
+        for (final var element : route.getElements()) {
+            final var childNode = prefixNode.getChildRoute(element);
+            if (childNode.isEmpty()) return Optional.empty();
+            prefixNode = childNode.get();
+        }
+
+        return Optional.of(prefixNode);
     }
 
     /**
@@ -47,5 +66,36 @@ public class TreeRouter<E> implements Router<E> {
 
         final var child = routeTree.getOrCreateChildRoute(route.getElements().get(0));
         return findOrCreateNode(child, route.withoutLeadingElement());
+    }
+
+    /**
+     * Creates a new {@link TreeRouter} containing the sum of all routes in the given sub routers
+     * at the time of invocation.
+     * @throws RouteConflictException if the given routers cannot be summed because they
+     * contain routes which conflict with one another.
+     */
+    public static <E> TreeRouter<E> sum(Collection<Router<E>> subRouters) {
+        final var masterRouter = new TreeRouter<E>();
+
+        subRouters.stream()
+                .flatMap(subRouter -> subRouter.getAllEndpoints(Route.ROOT).stream())
+                .forEach(positionedEndpoint -> masterRouter.addRoute(positionedEndpoint.method,
+                        positionedEndpoint.route, positionedEndpoint.endpoint));
+
+        return masterRouter;
+    }
+
+    /**
+     * Returns a new {@link TreeRouter} which is identical to the given {@link Router} except
+     * all routes have been prefixed with the given {@link Route}. The returned router will not
+     * reflect any changes made to the original router.
+     */
+    public static <E> TreeRouter<E> prefix(Router<E> router, Route prefix) {
+        final var prefixedRouter = new TreeRouter<E>();
+        for (final var positionedEndpoint : router.getAllEndpoints(Route.ROOT)) {
+            final var prefixedRoute = Route.concat(prefix, positionedEndpoint.route);
+            prefixedRouter.addRoute(positionedEndpoint.method, prefixedRoute, positionedEndpoint.endpoint);
+        }
+        return prefixedRouter;
     }
 }

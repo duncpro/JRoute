@@ -17,8 +17,8 @@ import static java.util.stream.Collectors.toUnmodifiableList;
 public class Route {
     private final List<RouteElement> elements;
 
-    protected Route(List<RouteElement> elements) {
-        this.elements = Collections.unmodifiableList(elements);
+    public Route(List<RouteElement> elements) {
+        this.elements = List.copyOf(elements);
     }
 
     public Route(String routeString) {
@@ -114,5 +114,15 @@ public class Route {
     @Override
     public int hashCode() {
         return Objects.hash(elements);
+    }
+
+    public static Route concat(Route... routes) {
+        Route concatted = Route.ROOT;
+        for (final var route : routes) {
+            for (final var element : route.getElements()) {
+                concatted = concatted.withTrailingElement(element);
+            }
+        }
+        return concatted;
     }
 }
