@@ -34,14 +34,17 @@ public class Route {
                 .collect(toUnmodifiableList());
     }
 
+    public List<String> extractVariables(String path) throws IllegalStateException {
+        return extractVariables(new Path(path));
+    }
+
     /**
      * Compiles a list of all the arguments contained within the given path.
      * For example, consider the route string "/users/*\/pets/*" and the path "/users/duncan/pets/cocoa".
      * The returned list would be ["duncan", "cocoa"].
      * @throws IllegalStateException if the given {@code pathString} is not of the same form as this route.
      */
-    public List<String> extractVariables(String pathString) throws IllegalStateException {
-        final var path = new Path(pathString);
+    public List<String> extractVariables(Path path) throws IllegalStateException {
 
         if (!JRouteUtilities.accepts(path, this)) {
             throw new IllegalArgumentException("The given path does not follow the" +
