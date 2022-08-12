@@ -50,7 +50,7 @@ Notably `TreeRouter` is not thread safe for mutations. Consider wrapping it in a
 to add routes concurrently. In practice route registration typically only happens at startup and the process is quick 
 enough that multi-threading is unnecessary.
 
-## Router Inspection and Summation
+## Router Inspection
 In some cases, like when generating API documentation, an application might need to
 inspect the state of a router at runtime. This can be accomplished using the `Router.getAllEndpoints()` method.
 
@@ -59,28 +59,6 @@ the root route. In other words, all endpoints registered with the router.
 ```java
 final Router<T> routers = /* ... */;
 final Set<PositionedEndpoint<T>> positionedEndpoints = router.getAllEndpoints(Route.ROOT);
-```
-
-### Summing Multiple Routers
-For large applications consisting of many modules it can be useful to assign
-each module its own `Router`. The following example demonstrates summing two routers.
-
-Assume that we are using some library which generates API documentation for a 
-given `Router` and returns a new `Router` which holds that documentation...
-````java
-final Router<T> appRouter = /* ... */;
-final Router<T> docRouter = generateApiDocs(appRouter);
-final TreeRouter<T> masterRouter = TreeRouter.sum(Set.of(appRouter, docRouter));
-````
-Now there is a single Router which contains the routes for our application and our application's documentation.
-
-### Prefixing Routers
-`TreeRouter.prefix` produces a copy of the original router except all routes begin with an arbitrary prefix `Route`.
-
-Our original documentation example can be extended by storing all API docs under a specific route.
-```java
-final Router<T> docRouter = TreeRouter.prefix(generateApiDocs(appRouter),
-        new Route("/docs"));
 ```
 
 ## More Docs
