@@ -61,5 +61,18 @@ final Router<T> routers = /* ... */;
 final Set<PositionedEndpoint<T>> positionedEndpoints = router.getAllEndpoints(Route.ROOT);
 ```
 
+## Parameterized Routes
+Accessing the value of a wildcard route element by its numerical index can be brittle
+and unergonomic. To remedy this problem, the utility class `ParameterizedRoute` is provided.
+This utility class is a wrapper around `Route` which associates a text label with
+every wildcard in a route. 
+```java
+final ParameterizedRoute route = ParamterizedRoute.parse("/customers/{customerId}/orders/{orderId}");
+final Path path = Path("/customers/duncan/orders/abc123");
+final Map<String, String> pathArguments = route.extractVariablesMap(path);
+assertEquals(Map.of("customerId", "duncan", "orderId", "abc123"), pathArguments);
+assertEquals(Route("/customers/*/orders/*"), route);
+```
+
 ## More Docs
 There is a Javadoc for this library [here](https://duncpro.github.io/JRoute).

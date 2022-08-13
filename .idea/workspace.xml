@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="377cceba-08b5-47e5-aead-ba5d96f09aa9" name="Default Changelist" comment="add Route.resolve">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/route/ParameterizedRoute.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/duncpro/jroute/route/ParameterizedRouteTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +87,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
@@ -226,7 +224,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1660360738130</updated>
-      <workItem from="1660360739173" duration="2800000" />
+      <workItem from="1660360739173" duration="3164000" />
     </task>
     <servers />
   </component>
