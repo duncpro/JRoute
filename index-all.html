@@ -97,9 +97,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">A</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="com/duncpro/jroute/JRouteUtilities.html#accepts(com.duncpro.jroute.Path,com.duncpro.jroute.route.Route)">accepts(Path, Route)</a></span> - Static method in class com.duncpro.jroute.<a href="com/duncpro/jroute/JRouteUtilities.html" title="class in com.duncpro.jroute">JRouteUtilities</a></dt>
+<dt><span class="memberNameLink"><a href="com/duncpro/jroute/JRouteInternalUtilities.html#accepts(com.duncpro.jroute.Path,com.duncpro.jroute.route.Route)">accepts(Path, Route)</a></span> - Static method in class com.duncpro.jroute.<a href="com/duncpro/jroute/JRouteInternalUtilities.html" title="class in com.duncpro.jroute">JRouteInternalUtilities</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/duncpro/jroute/JRouteUtilities.html#accepts(java.lang.String,com.duncpro.jroute.route.RouteElement)">accepts(String, RouteElement)</a></span> - Static method in class com.duncpro.jroute.<a href="com/duncpro/jroute/JRouteUtilities.html" title="class in com.duncpro.jroute">JRouteUtilities</a></dt>
+<dt><span class="memberNameLink"><a href="com/duncpro/jroute/JRouteInternalUtilities.html#accepts(java.lang.String,com.duncpro.jroute.route.RouteElement)">accepts(String, RouteElement)</a></span> - Static method in class com.duncpro.jroute.<a href="com/duncpro/jroute/JRouteInternalUtilities.html" title="class in com.duncpro.jroute">JRouteInternalUtilities</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/duncpro/jroute/router/Router.html#add(com.duncpro.jroute.HttpMethod,com.duncpro.jroute.route.Route,E)">add(HttpMethod, Route, E)</a></span> - Method in interface com.duncpro.jroute.router.<a href="com/duncpro/jroute/router/Router.html" title="interface in com.duncpro.jroute.router">Router</a></dt>
 <dd>&nbsp;</dd>
@@ -127,6 +127,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><a href="com/duncpro/jroute/route/package-summary.html">com.duncpro.jroute.route</a> - package com.duncpro.jroute.route</dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/duncpro/jroute/router/package-summary.html">com.duncpro.jroute.router</a> - package com.duncpro.jroute.router</dt>
+<dd>&nbsp;</dd>
+<dt><a href="com/duncpro/jroute/util/package-summary.html">com.duncpro.jroute.util</a> - package com.duncpro.jroute.util</dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/duncpro/jroute/route/Route.html#concat(com.duncpro.jroute.route.Route...)">concat(Route...)</a></span> - Static method in class com.duncpro.jroute.route.<a href="com/duncpro/jroute/route/Route.html" title="class in com.duncpro.jroute.route">Route</a></dt>
 <dd>&nbsp;</dd>
@@ -164,10 +166,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/duncpro/jroute/route/Route.html#extractVariables(java.lang.String)">extractVariables(String)</a></span> - Method in class com.duncpro.jroute.route.<a href="com/duncpro/jroute/route/Route.html" title="class in com.duncpro.jroute.route">Route</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/duncpro/jroute/route/ParameterizedRoute.html#extractVariablesMap(com.duncpro.jroute.Path)">extractVariablesMap(Path)</a></span> - Method in class com.duncpro.jroute.route.<a href="com/duncpro/jroute/route/ParameterizedRoute.html" title="class in com.duncpro.jroute.route">ParameterizedRoute</a></dt>
+<dt><span class="memberNameLink"><a href="com/duncpro/jroute/util/ParameterizedRoute.html#extractVariablesMap(com.duncpro.jroute.Path)">extractVariablesMap(Path)</a></span> - Method in class com.duncpro.jroute.util.<a href="com/duncpro/jroute/util/ParameterizedRoute.html" title="class in com.duncpro.jroute.util">ParameterizedRoute</a></dt>
 <dd>
 <div class="block">Returns a mapping of parameters to arguments given some <a href="com/duncpro/jroute/Path.html" title="class in com.duncpro.jroute"><code>Path</code></a> whose structure matches
- the <a href="com/duncpro/jroute/route/Route.html" title="class in com.duncpro.jroute.route"><code>Route</code></a> represented by this <a href="com/duncpro/jroute/route/ParameterizedRoute.html" title="class in com.duncpro.jroute.route"><code>ParameterizedRoute</code></a>.</div>
+ the <a href="com/duncpro/jroute/route/Route.html" title="class in com.duncpro.jroute.route"><code>Route</code></a> represented by this <a href="com/duncpro/jroute/util/ParameterizedRoute.html" title="class in com.duncpro.jroute.util"><code>ParameterizedRoute</code></a>.</div>
 </dd>
 </dl>
 <a id="I:F">
@@ -181,7 +183,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="com/duncpro/jroute/router/TreeRouter.html#findOrCreateNode(com.duncpro.jroute.router.RouteTreeNode,com.duncpro.jroute.route.Route)">findOrCreateNode(RouteTreeNode&lt;E&gt;, Route)</a></span> - Static method in class com.duncpro.jroute.router.<a href="com/duncpro/jroute/router/TreeRouter.html" title="class in com.duncpro.jroute.router">TreeRouter</a></dt>
 <dd>
-<div class="block">A variant of <a href="com/duncpro/jroute/router/TreeRouter.html#findNode(com.duncpro.jroute.router.RouteTreeNode,com.duncpro.jroute.Path)"><code>findNode(RouteTreeNode, Path)</code></a> which will add new branches to the
+<div class="block">A variant of <a href="com/duncpro/jroute/router/TreeRouter.html#findNode(com.duncpro.jroute.router.RouteTreeNode,com.duncpro.jroute.Path)"><code>TreeRouter.findNode(RouteTreeNode, Path)</code></a> which will add new branches to the
  route tree if necessary so that the <a href="com/duncpro/jroute/route/Route.html" title="class in com.duncpro.jroute.route"><code>Route</code></a> may be resolved to a <code>RouteTreeNode</code>.</div>
 </dd>
 </dl>
@@ -206,7 +208,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/duncpro/jroute/route/StaticRouteElement.html#getMatch()">getMatch()</a></span> - Method in class com.duncpro.jroute.route.<a href="com/duncpro/jroute/route/StaticRouteElement.html" title="class in com.duncpro.jroute.route">StaticRouteElement</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/duncpro/jroute/route/ParameterizedRoute.html#getParameterLabels()">getParameterLabels()</a></span> - Method in class com.duncpro.jroute.route.<a href="com/duncpro/jroute/route/ParameterizedRoute.html" title="class in com.duncpro.jroute.route">ParameterizedRoute</a></dt>
+<dt><span class="memberNameLink"><a href="com/duncpro/jroute/util/ParameterizedRoute.html#getParameterLabels()">getParameterLabels()</a></span> - Method in class com.duncpro.jroute.util.<a href="com/duncpro/jroute/util/ParameterizedRoute.html" title="class in com.duncpro.jroute.util">ParameterizedRoute</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/duncpro/jroute/router/RouterResult.Matched.html#getRoute()">getRoute()</a></span> - Method in class com.duncpro.jroute.router.<a href="com/duncpro/jroute/router/RouterResult.Matched.html" title="class in com.duncpro.jroute.router">RouterResult.Matched</a></dt>
 <dd>
@@ -246,9 +248,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">J</h2>
 <dl>
-<dt><a href="com/duncpro/jroute/JRouteUtilities.html" title="class in com.duncpro.jroute"><span class="typeNameLink">JRouteUtilities</span></a> - Class in <a href="com/duncpro/jroute/package-summary.html">com.duncpro.jroute</a></dt>
+<dt><a href="com/duncpro/jroute/JRouteInternalUtilities.html" title="class in com.duncpro.jroute"><span class="typeNameLink">JRouteInternalUtilities</span></a> - Class in <a href="com/duncpro/jroute/package-summary.html">com.duncpro.jroute</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="com/duncpro/jroute/JRouteUtilities.html#%3Cinit%3E()">JRouteUtilities()</a></span> - Constructor for class com.duncpro.jroute.<a href="com/duncpro/jroute/JRouteUtilities.html" title="class in com.duncpro.jroute">JRouteUtilities</a></dt>
+<dt><span class="memberNameLink"><a href="com/duncpro/jroute/JRouteInternalUtilities.html#%3Cinit%3E()">JRouteInternalUtilities()</a></span> - Constructor for class com.duncpro.jroute.<a href="com/duncpro/jroute/JRouteInternalUtilities.html" title="class in com.duncpro.jroute">JRouteInternalUtilities</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a id="I:M">
@@ -272,19 +274,19 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">P</h2>
 <dl>
-<dt><a href="com/duncpro/jroute/route/ParameterizedRoute.html" title="class in com.duncpro.jroute.route"><span class="typeNameLink">ParameterizedRoute</span></a> - Class in <a href="com/duncpro/jroute/route/package-summary.html">com.duncpro.jroute.route</a></dt>
+<dt><a href="com/duncpro/jroute/util/ParameterizedRoute.html" title="class in com.duncpro.jroute.util"><span class="typeNameLink">ParameterizedRoute</span></a> - Class in <a href="com/duncpro/jroute/util/package-summary.html">com.duncpro.jroute.util</a></dt>
 <dd>
 <div class="block">This class is an ergonomic wrapper around <a href="com/duncpro/jroute/route/Route.html" title="class in com.duncpro.jroute.route"><code>Route</code></a> which associates a label
  with each <a href="com/duncpro/jroute/route/WildcardRouteElement.html" title="class in com.duncpro.jroute.route"><code>WildcardRouteElement</code></a> in a <a href="com/duncpro/jroute/route/Route.html" title="class in com.duncpro.jroute.route"><code>Route</code></a>.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/duncpro/jroute/route/ParameterizedRoute.html#%3Cinit%3E(java.util.List,java.util.List)">ParameterizedRoute(List&lt;String&gt;, List&lt;RouteElement&gt;)</a></span> - Constructor for class com.duncpro.jroute.route.<a href="com/duncpro/jroute/route/ParameterizedRoute.html" title="class in com.duncpro.jroute.route">ParameterizedRoute</a></dt>
+<dt><span class="memberNameLink"><a href="com/duncpro/jroute/util/ParameterizedRoute.html#%3Cinit%3E(java.util.List,java.util.List)">ParameterizedRoute(List&lt;String&gt;, List&lt;RouteElement&gt;)</a></span> - Constructor for class com.duncpro.jroute.util.<a href="com/duncpro/jroute/util/ParameterizedRoute.html" title="class in com.duncpro.jroute.util">ParameterizedRoute</a></dt>
 <dd>
-<div class="block">Creates a <a href="com/duncpro/jroute/route/ParameterizedRoute.html" title="class in com.duncpro.jroute.route"><code>ParameterizedRoute</code></a> where the ith string in the labels list corresponds to the ith
+<div class="block">Creates a <a href="com/duncpro/jroute/util/ParameterizedRoute.html" title="class in com.duncpro.jroute.util"><code>ParameterizedRoute</code></a> where the ith string in the labels list corresponds to the ith
  <a href="com/duncpro/jroute/route/WildcardRouteElement.html" title="class in com.duncpro.jroute.route"><code>WildcardRouteElement</code></a> in the elements list.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="com/duncpro/jroute/route/ParameterizedRoute.html#parse(java.lang.String)">parse(String)</a></span> - Static method in class com.duncpro.jroute.route.<a href="com/duncpro/jroute/route/ParameterizedRoute.html" title="class in com.duncpro.jroute.route">ParameterizedRoute</a></dt>
+<dt><span class="memberNameLink"><a href="com/duncpro/jroute/util/ParameterizedRoute.html#parse(java.lang.String)">parse(String)</a></span> - Static method in class com.duncpro.jroute.util.<a href="com/duncpro/jroute/util/ParameterizedRoute.html" title="class in com.duncpro.jroute.util">ParameterizedRoute</a></dt>
 <dd>
-<div class="block">Constructs a <a href="com/duncpro/jroute/route/ParameterizedRoute.html" title="class in com.duncpro.jroute.route"><code>ParameterizedRoute</code></a> given a parameterized route string.</div>
+<div class="block">Constructs a <a href="com/duncpro/jroute/util/ParameterizedRoute.html" title="class in com.duncpro.jroute.util"><code>ParameterizedRoute</code></a> given a parameterized route string.</div>
 </dd>
 <dt><a href="com/duncpro/jroute/Path.html" title="class in com.duncpro.jroute"><span class="typeNameLink">Path</span></a> - Class in <a href="com/duncpro/jroute/package-summary.html">com.duncpro.jroute</a></dt>
 <dd>&nbsp;</dd>

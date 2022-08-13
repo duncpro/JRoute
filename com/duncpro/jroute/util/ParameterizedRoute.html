@@ -115,7 +115,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <!-- ======== START OF CLASS DATA ======== -->
 <main role="main">
 <div class="header">
-<div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.duncpro.jroute.route</a></div>
+<div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.duncpro.jroute.util</a></div>
 <h2 title="Class ParameterizedRoute" class="title">Class ParameterizedRoute</h2>
 </div>
 <div class="contentContainer">
@@ -123,10 +123,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li><a href="Route.html" title="class in com.duncpro.jroute.route">com.duncpro.jroute.route.Route</a></li>
+<li><a href="../route/Route.html" title="class in com.duncpro.jroute.route">com.duncpro.jroute.route.Route</a></li>
 <li>
 <ul class="inheritance">
-<li>com.duncpro.jroute.route.ParameterizedRoute</li>
+<li>com.duncpro.jroute.util.ParameterizedRoute</li>
 </ul>
 </li>
 </ul>
@@ -137,15 +137,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <hr>
 <pre>public class <span class="typeNameLabel">ParameterizedRoute</span>
-extends <a href="Route.html" title="class in com.duncpro.jroute.route">Route</a></pre>
-<div class="block">This class is an ergonomic wrapper around <a href="Route.html" title="class in com.duncpro.jroute.route"><code>Route</code></a> which associates a label
- with each <a href="WildcardRouteElement.html" title="class in com.duncpro.jroute.route"><code>WildcardRouteElement</code></a> in a <a href="Route.html" title="class in com.duncpro.jroute.route"><code>Route</code></a>.
+extends <a href="../route/Route.html" title="class in com.duncpro.jroute.route">Route</a></pre>
+<div class="block">This class is an ergonomic wrapper around <a href="../route/Route.html" title="class in com.duncpro.jroute.route"><code>Route</code></a> which associates a label
+ with each <a href="../route/WildcardRouteElement.html" title="class in com.duncpro.jroute.route"><code>WildcardRouteElement</code></a> in a <a href="../route/Route.html" title="class in com.duncpro.jroute.route"><code>Route</code></a>.
 
- This class does not represent a unique type of <a href="Route.html" title="class in com.duncpro.jroute.route"><code>Route</code></a>, instead it is simply a utility
- to make accessing the variable elements in a path more ergonomic. Since <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.route"><code>ParameterizedRoute</code></a>
- is simply a <a href="Route.html" title="class in com.duncpro.jroute.route"><code>Route</code></a>, two instances can be equal even if their parameter labels differ, so long as
- each route contains the same <a href="RouteElement.html" title="class in com.duncpro.jroute.route"><code>RouteElement</code></a>s in the same order. Moreover, a <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.route"><code>ParameterizedRoute</code></a>
- can be equal to a <a href="Route.html" title="class in com.duncpro.jroute.route"><code>Route</code></a>, as long as the aforementioned condition is true.</div>
+ This class does not represent a unique type of <a href="../route/Route.html" title="class in com.duncpro.jroute.route"><code>Route</code></a>, instead it is simply a utility
+ to make accessing the variable elements in a path more ergonomic. Since <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.util"><code>ParameterizedRoute</code></a>
+ is simply a <a href="../route/Route.html" title="class in com.duncpro.jroute.route"><code>Route</code></a>, two instances can be equal even if their parameter labels differ, so long as
+ each route contains the same <a href="../route/RouteElement.html" title="class in com.duncpro.jroute.route"><code>RouteElement</code></a>s in the same order. Moreover, a <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.util"><code>ParameterizedRoute</code></a>
+ can be equal to a <a href="../route/Route.html" title="class in com.duncpro.jroute.route"><code>Route</code></a>, as long as the aforementioned condition is true.</div>
 </li>
 </ul>
 </div>
@@ -163,8 +163,8 @@ extends <a href="Route.html" title="class in com.duncpro.jroute.route">Route</a>
 <li class="blockList"><a id="fields.inherited.from.class.com.duncpro.jroute.route.Route">
 <!--   -->
 </a>
-<h3>Fields inherited from class&nbsp;com.duncpro.jroute.route.<a href="Route.html" title="class in com.duncpro.jroute.route">Route</a></h3>
-<code><a href="Route.html#ROOT">ROOT</a></code></li>
+<h3>Fields inherited from class&nbsp;com.duncpro.jroute.route.<a href="../route/Route.html" title="class in com.duncpro.jroute.route">Route</a></h3>
+<code><a href="../route/Route.html#ROOT">ROOT</a></code></li>
 </ul>
 </li>
 </ul>
@@ -184,10 +184,10 @@ extends <a href="Route.html" title="class in com.duncpro.jroute.route">Route</a>
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.util.List,java.util.List)">ParameterizedRoute</a></span>&#8203;(java.util.List&lt;java.lang.String&gt;&nbsp;parameterLabels,
-                  java.util.List&lt;<a href="RouteElement.html" title="class in com.duncpro.jroute.route">RouteElement</a>&gt;&nbsp;elements)</code></th>
+                  java.util.List&lt;<a href="../route/RouteElement.html" title="class in com.duncpro.jroute.route">RouteElement</a>&gt;&nbsp;elements)</code></th>
 <td class="colLast">
-<div class="block">Creates a <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.route"><code>ParameterizedRoute</code></a> where the ith string in the labels list corresponds to the ith
- <a href="WildcardRouteElement.html" title="class in com.duncpro.jroute.route"><code>WildcardRouteElement</code></a> in the elements list.</div>
+<div class="block">Creates a <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.util"><code>ParameterizedRoute</code></a> where the ith string in the labels list corresponds to the ith
+ <a href="../route/WildcardRouteElement.html" title="class in com.duncpro.jroute.route"><code>WildcardRouteElement</code></a> in the elements list.</div>
 </td>
 </tr>
 </table>
@@ -213,7 +213,7 @@ extends <a href="Route.html" title="class in com.duncpro.jroute.route">Route</a>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#extractVariablesMap(com.duncpro.jroute.Path)">extractVariablesMap</a></span>&#8203;(<a href="../Path.html" title="class in com.duncpro.jroute">Path</a>&nbsp;path)</code></th>
 <td class="colLast">
 <div class="block">Returns a mapping of parameters to arguments given some <a href="../Path.html" title="class in com.duncpro.jroute"><code>Path</code></a> whose structure matches
- the <a href="Route.html" title="class in com.duncpro.jroute.route"><code>Route</code></a> represented by this <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.route"><code>ParameterizedRoute</code></a>.</div>
+ the <a href="../route/Route.html" title="class in com.duncpro.jroute.route"><code>Route</code></a> represented by this <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.util"><code>ParameterizedRoute</code></a>.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -222,10 +222,10 @@ extends <a href="Route.html" title="class in com.duncpro.jroute.route">Route</a>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>static <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.route">ParameterizedRoute</a></code></td>
+<td class="colFirst"><code>static <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.util">ParameterizedRoute</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#parse(java.lang.String)">parse</a></span>&#8203;(java.lang.String&nbsp;routeString)</code></th>
 <td class="colLast">
-<div class="block">Constructs a <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.route"><code>ParameterizedRoute</code></a> given a parameterized route string.</div>
+<div class="block">Constructs a <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.util"><code>ParameterizedRoute</code></a> given a parameterized route string.</div>
 </td>
 </tr>
 </table>
@@ -233,8 +233,8 @@ extends <a href="Route.html" title="class in com.duncpro.jroute.route">Route</a>
 <li class="blockList"><a id="methods.inherited.from.class.com.duncpro.jroute.route.Route">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;com.duncpro.jroute.route.<a href="Route.html" title="class in com.duncpro.jroute.route">Route</a></h3>
-<code><a href="Route.html#concat(com.duncpro.jroute.route.Route...)">concat</a>, <a href="Route.html#equals(java.lang.Object)">equals</a>, <a href="Route.html#extractVariables(com.duncpro.jroute.Path)">extractVariables</a>, <a href="Route.html#extractVariables(java.lang.String)">extractVariables</a>, <a href="Route.html#getElements()">getElements</a>, <a href="Route.html#hashCode()">hashCode</a>, <a href="Route.html#isRoot()">isRoot</a>, <a href="Route.html#resolve(com.duncpro.jroute.route.Route)">resolve</a>, <a href="Route.html#toString()">toString</a>, <a href="Route.html#withLeadingElement(com.duncpro.jroute.route.RouteElement)">withLeadingElement</a>, <a href="Route.html#withoutLeadingElement()">withoutLeadingElement</a>, <a href="Route.html#withTrailingElement(com.duncpro.jroute.route.RouteElement)">withTrailingElement</a></code></li>
+<h3>Methods inherited from class&nbsp;com.duncpro.jroute.route.<a href="../route/Route.html" title="class in com.duncpro.jroute.route">Route</a></h3>
+<code><a href="../route/Route.html#concat(com.duncpro.jroute.route.Route...)">concat</a>, <a href="../route/Route.html#equals(java.lang.Object)">equals</a>, <a href="../route/Route.html#extractVariables(com.duncpro.jroute.Path)">extractVariables</a>, <a href="../route/Route.html#extractVariables(java.lang.String)">extractVariables</a>, <a href="../route/Route.html#getElements()">getElements</a>, <a href="../route/Route.html#hashCode()">hashCode</a>, <a href="../route/Route.html#isRoot()">isRoot</a>, <a href="../route/Route.html#resolve(com.duncpro.jroute.route.Route)">resolve</a>, <a href="../route/Route.html#toString()">toString</a>, <a href="../route/Route.html#withLeadingElement(com.duncpro.jroute.route.RouteElement)">withLeadingElement</a>, <a href="../route/Route.html#withoutLeadingElement()">withoutLeadingElement</a>, <a href="../route/Route.html#withTrailingElement(com.duncpro.jroute.route.RouteElement)">withTrailingElement</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -266,10 +266,10 @@ extends <a href="Route.html" title="class in com.duncpro.jroute.route">Route</a>
 <li class="blockList">
 <h4>ParameterizedRoute</h4>
 <pre>public&nbsp;ParameterizedRoute&#8203;(java.util.List&lt;java.lang.String&gt;&nbsp;parameterLabels,
-                          java.util.List&lt;<a href="RouteElement.html" title="class in com.duncpro.jroute.route">RouteElement</a>&gt;&nbsp;elements)</pre>
-<div class="block">Creates a <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.route"><code>ParameterizedRoute</code></a> where the ith string in the labels list corresponds to the ith
- <a href="WildcardRouteElement.html" title="class in com.duncpro.jroute.route"><code>WildcardRouteElement</code></a> in the elements list. See also <a href="#parse(java.lang.String)"><code>parse(String)</code></a>,
- which constructs a <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.route"><code>ParameterizedRoute</code></a> from a human-readable parameterized route string.</div>
+                          java.util.List&lt;<a href="../route/RouteElement.html" title="class in com.duncpro.jroute.route">RouteElement</a>&gt;&nbsp;elements)</pre>
+<div class="block">Creates a <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.util"><code>ParameterizedRoute</code></a> where the ith string in the labels list corresponds to the ith
+ <a href="../route/WildcardRouteElement.html" title="class in com.duncpro.jroute.route"><code>WildcardRouteElement</code></a> in the elements list. See also <a href="#parse(java.lang.String)"><code>parse(String)</code></a>,
+ which constructs a <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.util"><code>ParameterizedRoute</code></a> from a human-readable parameterized route string.</div>
 </li>
 </ul>
 </li>
@@ -299,7 +299,7 @@ extends <a href="Route.html" title="class in com.duncpro.jroute.route">Route</a>
 <h4>extractVariablesMap</h4>
 <pre class="methodSignature">public&nbsp;java.util.Map&lt;java.lang.String,&#8203;java.lang.String&gt;&nbsp;extractVariablesMap&#8203;(<a href="../Path.html" title="class in com.duncpro.jroute">Path</a>&nbsp;path)</pre>
 <div class="block">Returns a mapping of parameters to arguments given some <a href="../Path.html" title="class in com.duncpro.jroute"><code>Path</code></a> whose structure matches
- the <a href="Route.html" title="class in com.duncpro.jroute.route"><code>Route</code></a> represented by this <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.route"><code>ParameterizedRoute</code></a>.
+ the <a href="../route/Route.html" title="class in com.duncpro.jroute.route"><code>Route</code></a> represented by this <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.util"><code>ParameterizedRoute</code></a>.
 
  For example a parameterized route string of '/customers/{customerId}/orders/{orderId}', and path of
  "/customers/duncan/orders/abc123" would result in a return value of [(customerId, duncan), (orderId, abc123)].</div>
@@ -311,8 +311,8 @@ extends <a href="Route.html" title="class in com.duncpro.jroute.route">Route</a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>parse</h4>
-<pre class="methodSignature">public static&nbsp;<a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.route">ParameterizedRoute</a>&nbsp;parse&#8203;(java.lang.String&nbsp;routeString)</pre>
-<div class="block">Constructs a <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.route"><code>ParameterizedRoute</code></a> given a parameterized route string.
+<pre class="methodSignature">public static&nbsp;<a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.util">ParameterizedRoute</a>&nbsp;parse&#8203;(java.lang.String&nbsp;routeString)</pre>
+<div class="block">Constructs a <a href="ParameterizedRoute.html" title="class in com.duncpro.jroute.util"><code>ParameterizedRoute</code></a> given a parameterized route string.
  For example: "/customers/{customerId}/orders/{orderId}".</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
