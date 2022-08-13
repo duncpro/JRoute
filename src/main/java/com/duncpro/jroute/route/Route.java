@@ -1,11 +1,10 @@
 package com.duncpro.jroute.route;
 
-import com.duncpro.jroute.JRouteUtilities;
+import com.duncpro.jroute.JRouteInternalUtilities;
 import com.duncpro.jroute.Path;
 import net.jcip.annotations.Immutable;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.regex.Pattern;
@@ -46,7 +45,7 @@ public class Route {
      */
     public List<String> extractVariables(Path path) throws IllegalStateException {
 
-        if (!JRouteUtilities.accepts(path, this)) {
+        if (!JRouteInternalUtilities.accepts(path, this)) {
             throw new IllegalArgumentException("The given path does not follow the" +
                     " form of this route.");
         }
@@ -109,7 +108,7 @@ public class Route {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Route)) return false;
         Route route = (Route) o;
         return elements.equals(route.elements);
     }

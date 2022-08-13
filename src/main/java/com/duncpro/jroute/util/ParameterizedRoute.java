@@ -1,6 +1,10 @@
-package com.duncpro.jroute.route;
+package com.duncpro.jroute.util;
 
 import com.duncpro.jroute.Path;
+import com.duncpro.jroute.route.Route;
+import com.duncpro.jroute.route.RouteElement;
+import com.duncpro.jroute.route.StaticRouteElement;
+import com.duncpro.jroute.route.WildcardRouteElement;
 
 import java.util.ArrayList;
 import java.util.HashMap;

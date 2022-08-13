@@ -1,7 +1,7 @@
 package com.duncpro.jroute.router;
 
 import com.duncpro.jroute.HttpMethod;
-import com.duncpro.jroute.JRouteUtilities;
+import com.duncpro.jroute.JRouteInternalUtilities;
 import com.duncpro.jroute.RouteConflictException;
 import com.duncpro.jroute.route.RouteElement;
 import com.duncpro.jroute.route.WildcardRouteElement;
@@ -48,7 +48,7 @@ class RouteTreeNode<E> {
             return Optional.of(children.get(0));
         } else {
             return children.stream()
-                    .filter(child -> JRouteUtilities.accepts(pathElement, child.position.getRouteElement()))
+                    .filter(child -> JRouteInternalUtilities.accepts(pathElement, child.position.getRouteElement()))
                     .reduce(($, $$) -> { throw new AssertionError(); });
         }
     }

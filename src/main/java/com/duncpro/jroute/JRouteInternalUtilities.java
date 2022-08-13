@@ -5,7 +5,7 @@ import com.duncpro.jroute.route.RouteElement;
 import com.duncpro.jroute.route.StaticRouteElement;
 import com.duncpro.jroute.route.WildcardRouteElement;
 
-public class JRouteUtilities {
+public class JRouteInternalUtilities {
     public static boolean accepts(String pathElement, RouteElement routeElement) {
         if (routeElement instanceof WildcardRouteElement) {
             return true;

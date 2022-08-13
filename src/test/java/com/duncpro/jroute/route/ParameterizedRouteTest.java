@@ -1,6 +1,7 @@
 package com.duncpro.jroute.route;
 
 import com.duncpro.jroute.Path;
+import com.duncpro.jroute.util.ParameterizedRoute;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
