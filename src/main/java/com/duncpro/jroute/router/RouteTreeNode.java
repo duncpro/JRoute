@@ -1,6 +1,5 @@
 package com.duncpro.jroute.router;
 
-import com.duncpro.jroute.HttpMethod;
 import com.duncpro.jroute.JRouteInternalUtilities;
 import com.duncpro.jroute.RouteConflictException;
 import com.duncpro.jroute.route.RouteElement;
@@ -14,22 +13,22 @@ import java.util.stream.Stream;
 class RouteTreeNode<E> {
     protected final RouteTreeNodePosition<E> position;
     private final List<RouteTreeNode<E>> children = new ArrayList<>();
-    private final Map<HttpMethod, E> endpoints = new HashMap<>();
+    private E endpoint;
 
     protected RouteTreeNode(RouteTreeNodePosition<E> position) {
         this.position = position;
     }
 
     /**
-     * Returns a {@link Stream} containing all endpoints which are defined at this {@link RouteTreeNode}
+     * Returns a {@link Stream} containing the endpoint which is defined at this {@link RouteTreeNode}
      * as well as all {@link RouteTreeNode}s descending from the given {@link RouteTreeNode}s.
      */
     static <E> Set<PositionedEndpoint<E>> getAllEndpoints(RouteTreeNode<E> root) {
         final var endpoints = new HashSet<PositionedEndpoint<E>>();
 
-        root.endpoints.entrySet().stream()
-                .map(e -> new PositionedEndpoint<E>(root.position.getRoute(), e.getKey(), e.getValue()))
-                .forEach(endpoints::add);
+        if (root.endpoint != null) {
+            endpoints.add(new PositionedEndpoint<>(root.position.getRoute(), root.endpoint));
+        }
 
         root.children.stream()
                 .flatMap(child -> RouteTreeNode.getAllEndpoints(child).stream())
@@ -83,14 +82,15 @@ class RouteTreeNode<E> {
                 });
     }
 
-    void addEndpoint(HttpMethod method, E endpoint) {
+    void setEndpoint(E endpoint) {
         if (endpoint == null) throw new IllegalArgumentException();
-        final var prev = endpoints.putIfAbsent(method, endpoint);
-        if (prev != null) throw new IllegalStateException("PositionedEndpoint already bound to method: " + method.name());
+        if (this.endpoint != null) throw new RouteConflictException("An endpoint is already bound to the RouteTreeNode" +
+                " at position: " + this.position.getRoute());
+        this.endpoint = endpoint;
     }
 
-    Optional<E> getEndpoint(HttpMethod method) {
-        return Optional.ofNullable(endpoints.get(method));
+    Optional<E> getEndpoint() {
+        return Optional.ofNullable(this.endpoint);
     }
 }
 

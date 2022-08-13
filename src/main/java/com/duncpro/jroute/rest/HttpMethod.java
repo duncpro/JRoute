@@ -1,4 +1,4 @@
-package com.duncpro.jroute;
+package com.duncpro.jroute.rest;
 
 public enum HttpMethod {
     GET,

@@ -1,8 +1,8 @@
 package com.duncpro.jroute;
 
-import com.duncpro.jroute.router.Router;
-import com.duncpro.jroute.router.TreeRouter;
-import com.duncpro.jroute.router.RouterResult;
+import com.duncpro.jroute.rest.HttpMethod;
+import com.duncpro.jroute.rest.RestRouteResult;
+import com.duncpro.jroute.rest.RestRouter;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -17,7 +17,7 @@ public class SmokeTest {
 
     @Test
     public void example() {
-        final Router<BiFunction<Request, List<String>, Integer>> router = new TreeRouter<>();
+        final RestRouter<BiFunction<Request, List<String>, Integer>> router = new RestRouter<>();
 
         // On application startup, register HTTP request handlers with the router.
         router.add(HttpMethod.GET, "/calculator/add/*/*", (request, pathArgs) -> {
@@ -31,14 +31,10 @@ public class SmokeTest {
         fakeIncomingRequest.path = "/calculator/add/6/4";
 
         // Resolve the HTTP request handler based on the path in the URL.
-        final RouterResult<BiFunction<Request, List<String>, Integer>> routerResult = router
-                .route(HttpMethod.GET, fakeIncomingRequest.path);
-
-        if (routerResult instanceof RouterResult.MethodNotAllowed) throw new AssertionError();
-        if (routerResult instanceof RouterResult.ResourceNotFound) throw new AssertionError();
-        if (!(routerResult instanceof RouterResult.Matched)) throw new AssertionError();
-
-        final var match = (RouterResult.Matched<BiFunction<Request, List<String>, Integer>>) routerResult;
+        final RestRouteResult.RestRouteMatch<BiFunction<Request, List<String>, Integer>> match =
+                router.route(HttpMethod.GET, fakeIncomingRequest.path)
+                        .asOptional()
+                        .orElseThrow();
 
         // Extract the variable path elements, so they may be used by the request handler.
         final var pathArgs = match.getRoute().extractVariables(fakeIncomingRequest.path);

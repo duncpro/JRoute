@@ -1,6 +1,5 @@
 package com.duncpro.jroute.router;
 
-import com.duncpro.jroute.HttpMethod;
 import com.duncpro.jroute.Path;
 import com.duncpro.jroute.RouteConflictException;
 import com.duncpro.jroute.route.Route;
@@ -8,24 +7,31 @@ import com.duncpro.jroute.route.RouteElement;
 import net.jcip.annotations.NotThreadSafe;
 
 import java.util.*;
+import java.util.function.Supplier;
 
 @NotThreadSafe
 public class TreeRouter<E> implements Router<E> {
     private final RouteTreeNode<E> rootRoute = new RouteTreeNode<>(RouteTreeNodePosition.root());
 
     @Override
-    public RouterResult<E> route(HttpMethod method, Path path) {
+    public Optional<RouteMatch<E>> route(Path path) {
         return findNode(rootRoute, path)
-                .map(node -> node.getEndpoint(method)
-                        .<RouterResult<E>>map(endpoint -> new RouterResult.Matched<>(endpoint, node.position.getRoute()))
-                        .orElse(new RouterResult.MethodNotAllowed<>()))
-                .orElse(new RouterResult.ResourceNotFound<>());
+                .flatMap(node -> node.getEndpoint()
+                        .map(endpoint -> new RouteMatch<>(endpoint, node.position.getRoute())));
     }
 
     @Override
-    public void add(HttpMethod method, Route route, E endpoint) throws RouteConflictException {
+    public void add(Route route, E endpoint) throws RouteConflictException {
         final var node = findOrCreateNode(rootRoute, route);
-        node.addEndpoint(method, endpoint);
+        node.setEndpoint(endpoint);
+    }
+
+    @Override
+    public E getOrAdd(Route route, Supplier<E> endpointFactory) {
+        final var node = findOrCreateNode(rootRoute, route);
+        final var endpoint = endpointFactory.get();
+        node.setEndpoint(endpoint);
+        return endpoint;
     }
 
     @Override

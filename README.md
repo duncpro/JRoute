@@ -8,7 +8,7 @@ Barebones URL router for Java.
 ## Usage Guide
 ### Create a Router
 ```java
-final Router<Supplier<Integer>> router = new TreeRouter<>();
+final RestRouter<Supplier<Integer>> router = new RestRouter<>();
 ```
 The type parameter describes the type of the endpoint class.
 In practice, this will be some interface which is capable of processing
@@ -17,16 +17,16 @@ All endpoints inside a router must conform to the same type. So using something 
 less than ideal.
 ### Add a Route
 ```java
-router.addRoute(HttpMethod.GET, "/users/*/age", () -> new Random().nextInt(100));
+router.add(HttpMethod.GET, "/users/*/age", () -> new Random().nextInt(100));
 ```
 The wildcard route element `*` indicates this endpoint accepts a single path parameter.
 In this case the parameter represents the user's id. 
 
-The third parameter of `addRoute` is the endpoint. For the sake of brevity we will generate a random
+The third parameter of `add` is the endpoint. For the sake of brevity we will generate a random
 number for each request instead of looking up the user's actual age in a database.
 ### Process Inbound Requests
 ```java
-final Optional<Matched<Supplier<Integer>>> result = router.route(HttpMethod.GET, "/users/duncpro/age").asOptional();
+final Optional<RestRouteMatch<Supplier<Integer>>> result = router.route(HttpMethod.GET, "/users/duncpro/age").asOptional();
 ```
 An empty optional is returned if no route matches the given path. In this case there is obviously a match since
 we just registered a route for this path above. In practice you should present a 404 page if a path
@@ -73,8 +73,6 @@ final Map<String, String> pathArguments = route.extractVariablesMap(path);
 assertEquals(Map.of("customerId", "duncan", "orderId", "abc123"), pathArguments);
 assertEquals(Route("/customers/*/orders/*"), route);
 ```
-
-
 
 ## More Docs
 There is a Javadoc for this library [here](https://duncpro.github.io/JRoute).

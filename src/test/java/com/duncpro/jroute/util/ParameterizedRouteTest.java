@@ -1,6 +1,8 @@
-package com.duncpro.jroute.route;
+package com.duncpro.jroute.util;
 
 import com.duncpro.jroute.Path;
+import com.duncpro.jroute.route.StaticRouteElement;
+import com.duncpro.jroute.route.WildcardRouteElement;
 import com.duncpro.jroute.util.ParameterizedRoute;
 import org.junit.jupiter.api.Test;
 
