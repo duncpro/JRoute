@@ -14,13 +14,16 @@ public class TreeRouter<E> implements Router<E> {
     private final RouteTreeNode<E> rootRoute = new RouteTreeNode<>(RouteTreeNodePosition.root());
 
     @Override
-    public Optional<RouterResult<E>> route(HttpMethod method, Path path) {
+    public RouterResult<E> route(HttpMethod method, Path path) {
         return findNode(rootRoute, path)
-                .flatMap(node -> node.getEndpointAsRouterResult(method));
+                .map(node -> node.getEndpoint(method)
+                        .<RouterResult<E>>map(endpoint -> new RouterResult.Matched<>(endpoint, node.position.getRoute()))
+                        .orElse(new RouterResult.MethodNotAllowed<>()))
+                .orElse(new RouterResult.ResourceNotFound<>());
     }
 
     @Override
-    public void addRoute(HttpMethod method, Route route, E endpoint) throws RouteConflictException {
+    public void add(HttpMethod method, Route route, E endpoint) throws RouteConflictException {
         final var node = findOrCreateNode(rootRoute, route);
         node.addEndpoint(method, endpoint);
     }

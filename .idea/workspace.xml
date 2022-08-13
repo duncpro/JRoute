@@ -6,8 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="377cceba-08b5-47e5-aead-ba5d96f09aa9" name="Default Changelist" comment="add Route.resolve">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/route/ParameterizedRoute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/route/ParameterizedRoute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/RouteTreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/RouteTreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/RouterResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/RouterResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/TreeRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/TreeRouter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/duncpro/jroute/ExampleUsage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/duncpro/jroute/SmokeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/duncpro/jroute/PathTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/duncpro/jroute/PathTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/duncpro/jroute/router/TreeRouterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/duncpro/jroute/router/TreeRouterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +108,7 @@
       <recent name="com.duncpro.jroute" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ParameterizedRouteTest">
+  <component name="RunManager" selected="Gradle.JRoute [test]">
     <configuration name="JRoute [publishAllPublicationsToMavenRepository]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -211,11 +218,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.JRoute [test]" />
         <item itemvalue="Gradle.ParameterizedRouteTest" />
         <item itemvalue="Gradle.JRoute [publishAllPublicationsToMavenRepository]" />
         <item itemvalue="Gradle.TreeRouterTest.prefix" />
         <item itemvalue="Gradle.TreeRouterTest.compose" />
-        <item itemvalue="Gradle.JRoute [test]" />
       </list>
     </recent_temporary>
   </component>
@@ -226,7 +233,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1660360738130</updated>
-      <workItem from="1660360739173" duration="3385000" />
+      <workItem from="1660360739173" duration="3457000" />
+      <workItem from="1660416528327" duration="3399000" />
+      <workItem from="1660419996798" duration="1740000" />
     </task>
     <servers />
   </component>

@@ -6,8 +6,6 @@ import com.duncpro.jroute.route.Route;
 import com.duncpro.jroute.route.StaticRouteElement;
 import org.junit.jupiter.api.Test;
 
-import java.util.Set;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class TreeRouterTest {
@@ -23,9 +21,8 @@ class TreeRouterTest {
         final var actualEndpoint = tree
                 .getOrCreateChildRoute(new StaticRouteElement("hello"))
                 .getOrCreateChildRoute(new StaticRouteElement("world"))
-                .getEndpointAsRouterResult(HttpMethod.GET)
-                .orElseThrow()
-                .getEndpoint();
+                .getEndpoint(HttpMethod.GET)
+                .orElseThrow();
 
         assertEquals(expectedEndpoint, actualEndpoint);
     }
@@ -36,9 +33,10 @@ class TreeRouterTest {
 
         final var expectedEndpoint = 1;
 
-        router.addRoute(HttpMethod.GET, "/hello/world", expectedEndpoint);
+        router.add(HttpMethod.GET, "/hello/world", expectedEndpoint);
 
         final var actualEndpoint = router.route(HttpMethod.GET, "/hello/world")
+                .asOptional()
                 .orElseThrow()
                 .getEndpoint();
 
@@ -51,9 +49,10 @@ class TreeRouterTest {
 
         final var expectedEndpoint = 10;
 
-        router.addRoute(HttpMethod.GET, "/users/*/pets/*/age", expectedEndpoint);
+        router.add(HttpMethod.GET, "/users/*/pets/*/age", expectedEndpoint);
 
         final var actualEndpoint = router.route(HttpMethod.GET, "/users/duncan/pets/cocoa/age")
+                .asOptional()
                 .orElseThrow()
                 .getEndpoint();
 
@@ -64,30 +63,40 @@ class TreeRouterTest {
     void unresolvablePath() {
         final var router = new TreeRouter<>();
 
-        router.addRoute(HttpMethod.GET, "/users", 0);
+        router.add(HttpMethod.GET, "/users", 0);
 
-        final var endpoint = router.route(HttpMethod.POST, "/settings");
+        final var result = router.route(HttpMethod.POST, "/settings");
 
-        assertTrue(endpoint.isEmpty());
+        assertTrue(result instanceof RouterResult.ResourceNotFound);
+    }
+
+    @Test
+    void unresolvableMethod() {
+        final var router = new TreeRouter<>();
+
+        router.add(HttpMethod.GET, "/users", 0);
+
+        final var result = router.route(HttpMethod.POST, "/users");
+        assertTrue(result instanceof RouterResult.MethodNotAllowed);
     }
 
     @Test
     void conflictWildcardAfterStaticRoute() {
         final var router = new TreeRouter<>();
-        router.addRoute(HttpMethod.GET, "/users/duncan", new Object());
+        router.add(HttpMethod.GET, "/users/duncan", new Object());
 
         assertThrows(RouteConflictException.class, () -> {
-            router.addRoute(HttpMethod.GET, "/users/*", new Object());
+            router.add(HttpMethod.GET, "/users/*", new Object());
         });
     }
 
     @Test
     void conflictStaticRouteAfterWildcard() {
         final var router = new TreeRouter<>();
-        router.addRoute(HttpMethod.GET, "/users/*", new Object());
+        router.add(HttpMethod.GET, "/users/*", new Object());
 
         assertThrows(RouteConflictException.class, () -> {
-            router.addRoute(HttpMethod.GET, "/users/duncan", new Object());
+            router.add(HttpMethod.GET, "/users/duncan", new Object());
         });
     }
 
@@ -96,9 +105,10 @@ class TreeRouterTest {
         final var router = new TreeRouter<>();
 
         final var expected = new Route("/users/*/devices");
-        router.addRoute(HttpMethod.GET, expected.toString(), new Object());
+        router.add(HttpMethod.GET, expected.toString(), new Object());
 
         final var actual = router.route(HttpMethod.GET, "/users/duncan/devices")
+                .asOptional()
                 .orElseThrow()
                 .getRoute();
 
@@ -112,8 +122,8 @@ class TreeRouterTest {
 
         final var expectedEndpoint = new PositionedEndpoint<>(new Route("/hello"), HttpMethod.GET, 1);
         final var expectedNestedEndpoint = new PositionedEndpoint<>(new Route("/hello/world"), HttpMethod.GET, 2);
-        router.addRoute(expectedEndpoint);
-        router.addRoute(expectedNestedEndpoint);
+        router.add(expectedEndpoint);
+        router.add(expectedNestedEndpoint);
 
         {
             final var resolvedEndpoints = router.getAllEndpoints(new Route("/hello/world"));

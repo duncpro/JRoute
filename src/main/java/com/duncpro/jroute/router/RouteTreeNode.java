@@ -89,17 +89,8 @@ class RouteTreeNode<E> {
         if (prev != null) throw new IllegalStateException("PositionedEndpoint already bound to method: " + method.name());
     }
 
-    Optional<RouterResult<E>> getEndpointAsRouterResult(HttpMethod method) {
-        final var endpoint = endpoints.get(method);
-
-        if (endpoint == null) return Optional.empty();
-
-        final var result = new RouterResult<>(
-                endpoint,
-                position.getRoute()
-        );
-
-        return Optional.of(result);
+    Optional<E> getEndpoint(HttpMethod method) {
+        return Optional.ofNullable(endpoints.get(method));
     }
 }
 

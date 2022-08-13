@@ -5,24 +5,20 @@ import com.duncpro.jroute.Path;
 import com.duncpro.jroute.RouteConflictException;
 import com.duncpro.jroute.route.Route;
 
-import java.util.List;
-import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public interface Router<E> {
-    default Optional<RouterResult<E>> route(HttpMethod method, String pathString) {
+    default RouterResult<E> route(HttpMethod method, String pathString) {
         return route(method, new Path(pathString));
     }
 
     /**
      * Finds the {@link Route} and endpoint ({@link E}) which has been assigned responsibility for requests made to the
      * given {@link Path} using the given {@link HttpMethod}. Routes must be registered with the router in advance using
-     * {@link #addRoute(HttpMethod, String, Object)} or similar. If no route exists for the given method and path then
+     * {@link #add(HttpMethod, String, Object)} or similar. If no route exists for the given method and path then
      * an empty optional is returned instead.
      */
-    Optional<RouterResult<E>> route(HttpMethod method, Path path);
+    RouterResult<E> route(HttpMethod method, Path path);
 
     /**
      * Assigns the given endpoint responsibility for requests made with the given {@link HttpMethod}
@@ -39,11 +35,11 @@ public interface Router<E> {
      * @throws RouteConflictException if the given {@code routeString} overlaps another pre-existing route with the same
      *      {@link HttpMethod}. The route will not be overwritten.
      */
-    default void addRoute(HttpMethod method, String routeString, E endpoint) throws RouteConflictException {
-        addRoute(method, new Route(routeString), endpoint);
+    default void add(HttpMethod method, String routeString, E endpoint) throws RouteConflictException {
+        add(method, new Route(routeString), endpoint);
     }
 
-    void addRoute(HttpMethod method, Route route, E endpoint) throws RouteConflictException;
+    void add(HttpMethod method, Route route, E endpoint) throws RouteConflictException;
 
     /**
      * Returns a set of {@link PositionedEndpoint}s which are accessible via the given {@link Route}.
@@ -55,7 +51,7 @@ public interface Router<E> {
     /**
      * @throws RouteConflictException if the given endpoint conflicts with a pre-existing endpoint within the router.
      */
-    default void addRoute(PositionedEndpoint<E> positionedEndpoint) {
-        addRoute(positionedEndpoint.method, positionedEndpoint.route, positionedEndpoint.endpoint);
+    default void add(PositionedEndpoint<E> positionedEndpoint) {
+        add(positionedEndpoint.method, positionedEndpoint.route, positionedEndpoint.endpoint);
     }
 }

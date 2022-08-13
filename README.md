@@ -26,7 +26,7 @@ The third parameter of `addRoute` is the endpoint. For the sake of brevity we wi
 number for each request instead of looking up the user's actual age in a database.
 ### Process Inbound Requests
 ```java
-final Optional<RouterResult<Supplier<Integer>>> result = router.route(HttpMethod.GET, "/users/duncpro/age");
+final Optional<Matched<Supplier<Integer>>> result = router.route(HttpMethod.GET, "/users/duncpro/age").asOptional();
 ```
 An empty optional is returned if no route matches the given path. In this case there is obviously a match since
 we just registered a route for this path above. In practice you should present a 404 page if a path
@@ -73,6 +73,8 @@ final Map<String, String> pathArguments = route.extractVariablesMap(path);
 assertEquals(Map.of("customerId", "duncan", "orderId", "abc123"), pathArguments);
 assertEquals(Route("/customers/*/orders/*"), route);
 ```
+
+
 
 ## More Docs
 There is a Javadoc for this library [here](https://duncpro.github.io/JRoute).

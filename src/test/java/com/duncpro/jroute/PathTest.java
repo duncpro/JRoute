@@ -1,7 +1,5 @@
 package com.duncpro.jroute;
 
-import com.duncpro.jroute.route.Route;
-import com.duncpro.jroute.route.StaticRouteElement;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
