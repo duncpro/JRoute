@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
  * each route contains the same {@link RouteElement}s in the same order. Moreover, a {@link ParameterizedRoute}
  * can be equal to a {@link Route}, as long as the aforementioned condition is true.
  */
-class ParameterizedRoute extends Route {
+public class ParameterizedRoute extends Route {
     private final List<String> parameterLabels;
 
     /**
