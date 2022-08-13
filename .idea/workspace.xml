@@ -10,6 +10,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/rest/RestRouteFailureType.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/rest/RestRouteResult.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/rest/RestRouter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/RouteMatch.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/util/WrappingRouter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
@@ -19,7 +20,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/PositionedEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/PositionedEndpoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/RouteTreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/RouteTreeNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/Router.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/RouterResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/RouteMatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/RouterResult.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/TreeRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/TreeRouter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/duncpro/jroute/SmokeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/duncpro/jroute/SmokeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/duncpro/jroute/route/ParameterizedRouteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/duncpro/jroute/util/ParameterizedRouteTest.java" afterDir="false" />
@@ -247,7 +248,7 @@
       <workItem from="1660416528327" duration="3399000" />
       <workItem from="1660419996798" duration="1839000" />
       <workItem from="1660427010812" duration="5460000" />
-      <workItem from="1660432755377" duration="285000" />
+      <workItem from="1660432755377" duration="336000" />
     </task>
     <servers />
   </component>
