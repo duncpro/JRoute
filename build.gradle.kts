@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.duncpro"
-version = "1.0-SNAPSHOT-5"
+version = "1.0-SNAPSHOT-6"
 
 repositories {
     mavenCentral()
