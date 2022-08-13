@@ -36,7 +36,7 @@ public class RestRouter<E> extends WrappingRouter<RestResource<E>> {
 
     public RestRouteResult<E> route(HttpMethod method, Path path) {
         return route(path)
-                .map(result -> result.getEndpoint().getEndpoint(method)
+                .map(result -> result.getEndpoint().getMethodEndpoint(method)
                         .<RestRouteResult<E>>map(endpoint -> new RestRouteResult.RestRouteMatch<>(endpoint, result.getRoute()))
                         .orElse(new RestRouteResult.UnsupportedMethod<>()))
                 .orElse(new RestRouteResult.ResourceNotFound<>());

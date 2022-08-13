@@ -1,12 +1,12 @@
 # JRoute
-Barebones router for Java.
-Supports basic path/route matching, and REST matching.
+General purpose router for Java.
+Supports basic path/route matching, as well as REST matching with HTTP verbs.
 
 [![Build Status](https://www.travis-ci.com/duncpro/JRoute.svg?branch=master)](https://www.travis-ci.com/duncpro/JRoute)
 [![codecov](https://codecov.io/gh/duncpro/JRoute/branch/master/graph/badge.svg?token=01IKEI8IW6)](https://codecov.io/gh/duncpro/JRoute)
 [![](https://jitpack.io/v/com.duncpro/jroute.svg)](https://jitpack.io/#com.duncpro/jroute)
 
-## Usage Guide
+## Getting Started with REST Routing
 ### Create a Router
 ```java
 final RestRouter<Supplier<Integer>> router = new RestRouter<>();

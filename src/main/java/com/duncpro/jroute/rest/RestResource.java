@@ -1,7 +1,5 @@
 package com.duncpro.jroute.rest;
 
-import com.duncpro.jroute.RouteConflictException;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -17,7 +15,7 @@ public class RestResource<E> {
                 " with the method " + method + " at this endpoint");
     }
 
-    Optional<E> getEndpoint(HttpMethod method) {
+    public Optional<E> getMethodEndpoint(HttpMethod method) {
         return Optional.ofNullable(methodMap.get(method));
     }
 }
