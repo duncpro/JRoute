@@ -5,11 +5,9 @@ import com.duncpro.jroute.RouteConflictException;
 import com.duncpro.jroute.route.Route;
 import com.duncpro.jroute.router.Router;
 import com.duncpro.jroute.router.TreeRouter;
-import com.duncpro.jroute.util.WrappingRouter;
+import com.duncpro.jroute.util.DelegatingRouter;
 
-import static java.util.Objects.requireNonNull;
-
-public class RestRouter<E> extends WrappingRouter<RestResource<E>> {
+public class RestRouter<E> extends DelegatingRouter<RestResource<E>> {
     public RestRouter() {
         super(new TreeRouter<>());
     }
@@ -22,7 +20,7 @@ public class RestRouter<E> extends WrappingRouter<RestResource<E>> {
         RestResource<E> resource = getOrAdd(route, RestResource::new);
 
         try {
-            resource.addEndpoint(method, endpoint);
+            resource.addMethodEndpoint(method, endpoint);
         } catch (MethodConflictException e) {
             throw new RouteConflictException("Can not add endpoint for method " + method + " at" +
                     " route " + route + " because there is already an endpoint associated with that" +

@@ -14,10 +14,10 @@ import java.util.function.Supplier;
 
 import static java.util.Objects.requireNonNull;
 
-public abstract class WrappingRouter<E> implements Router<E> {
+public abstract class DelegatingRouter<E> implements Router<E> {
     private final Router<E> underlyingRouter;
 
-    protected WrappingRouter(Router<E> underlyingRouter) {
+    protected DelegatingRouter(Router<E> underlyingRouter) {
         this.underlyingRouter = Objects.requireNonNull(underlyingRouter);
     }
 
@@ -40,5 +40,4 @@ public abstract class WrappingRouter<E> implements Router<E> {
     public Set<PositionedEndpoint<E>> getAllEndpoints(Route prefix) {
         return underlyingRouter.getAllEndpoints(prefix);
     }
-
 }

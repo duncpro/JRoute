@@ -1,7 +1,6 @@
 package com.duncpro.jroute.rest;
 
 import com.duncpro.jroute.route.Route;
-import com.duncpro.jroute.router.RouteMatch;
 
 import java.util.Optional;
 import java.util.function.Function;
@@ -22,7 +21,7 @@ public class RestRouteResult<E> {
             return this.route;
         }
 
-        public E getEndpoint() {
+        public E getMethodEndpoint() {
             return this.endpoint;
         }
     }

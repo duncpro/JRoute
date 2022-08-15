@@ -1,10 +1,8 @@
 package com.duncpro.jroute;
 
 import com.duncpro.jroute.rest.HttpMethod;
-import com.duncpro.jroute.rest.RestResource;
 import com.duncpro.jroute.rest.RestRouteResult;
 import com.duncpro.jroute.rest.RestRouter;
-import com.duncpro.jroute.route.Route;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -42,7 +40,7 @@ public class SmokeTest {
         final var pathArgs = match.getRoute().extractVariables(fakeIncomingRequest.path);
 
         // Invoke the request handler and pass in the variables.
-        final var response = match.getEndpoint().apply(fakeIncomingRequest, pathArgs);
+        final var response = match.getMethodEndpoint().apply(fakeIncomingRequest, pathArgs);
 
         // Make sure our calculator endpoint is working properly
         assertEquals(10, response);

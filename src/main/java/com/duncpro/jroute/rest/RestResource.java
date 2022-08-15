@@ -9,7 +9,7 @@ import static java.util.Objects.requireNonNull;
 public class RestResource<E> {
     private final Map<HttpMethod, E> methodMap = new HashMap<>();
 
-    void addEndpoint(HttpMethod method, E endpoint) throws MethodConflictException {
+    void addMethodEndpoint(HttpMethod method, E endpoint) throws MethodConflictException {
         final E prev = methodMap.putIfAbsent(method, endpoint);
         if (prev != null) throw new MethodConflictException("There is already an endpoint associated" +
                 " with the method " + method + " at this endpoint");
