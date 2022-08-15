@@ -40,4 +40,9 @@ public abstract class DelegatingRouter<E> implements Router<E> {
     public Set<PositionedEndpoint<E>> getAllEndpoints(Route prefix) {
         return underlyingRouter.getAllEndpoints(prefix);
     }
+
+    @Override
+    public Optional<E> getEndpoint(Route at) {
+        return underlyingRouter.getEndpoint(at);
+    }
 }

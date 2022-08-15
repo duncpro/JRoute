@@ -41,6 +41,11 @@ public class TreeRouter<E> implements Router<E> {
                 .orElse(Collections.emptySet());
     }
 
+    @Override
+    public Optional<E> getEndpoint(Route at) {
+        return findNode(at).flatMap(RouteTreeNode::getEndpoint);
+    }
+
     private Optional<RouteTreeNode<E>> findNode(Route route) {
         RouteTreeNode<E> prefixNode = rootRoute;
 

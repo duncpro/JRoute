@@ -32,6 +32,11 @@ public interface Router<E> {
     Set<PositionedEndpoint<E>> getAllEndpoints(Route prefix);
 
     /**
+     * Returns the endpoint which exists at the given {@link Route} (if any).
+     */
+    Optional<E> getEndpoint(Route at);
+
+    /**
      * @throws RouteConflictException if the given endpoint conflicts with a pre-existing endpoint within the router.
      */
     default void add(PositionedEndpoint<E> positionedEndpoint) {
