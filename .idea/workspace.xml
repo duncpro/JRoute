@@ -7,9 +7,7 @@
     <list default="true" id="377cceba-08b5-47e5-aead-ba5d96f09aa9" name="Default Changelist" comment="add Route.resolve">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/Router.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/TreeRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/TreeRouter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/util/DelegatingRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/util/DelegatingRouter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +105,28 @@
       <recent name="com.duncpro.jroute" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.JRoute [test]">
+  <component name="RunManager" selected="Gradle.JRoute [build]">
+    <configuration name="JRoute [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="JRoute [publishAllPublicationsToMavenRepository]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -173,27 +192,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TreeRouterTest.compose" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.duncpro.jroute.router.TreeRouterTest.compose&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="TreeRouterTest.prefix" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -217,11 +215,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.JRoute [build]" />
         <item itemvalue="Gradle.JRoute [test]" />
         <item itemvalue="Gradle.ParameterizedRouteTest" />
         <item itemvalue="Gradle.JRoute [publishAllPublicationsToMavenRepository]" />
         <item itemvalue="Gradle.TreeRouterTest.prefix" />
-        <item itemvalue="Gradle.TreeRouterTest.compose" />
       </list>
     </recent_temporary>
   </component>
@@ -238,7 +236,7 @@
       <workItem from="1660427010812" duration="5460000" />
       <workItem from="1660432755377" duration="1607000" />
       <workItem from="1660558378320" duration="486000" />
-      <workItem from="1660558937116" duration="160000" />
+      <workItem from="1660558937116" duration="1055000" />
     </task>
     <servers />
   </component>

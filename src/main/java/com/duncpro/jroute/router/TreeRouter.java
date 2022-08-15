@@ -29,6 +29,8 @@ public class TreeRouter<E> implements Router<E> {
     @Override
     public E getOrAdd(Route route, Supplier<E> endpointFactory) {
         final var node = findOrCreateNode(rootRoute, route);
+        if (node.getEndpoint().isPresent()) return node.getEndpoint().get();
+
         final var endpoint = endpointFactory.get();
         node.setEndpoint(endpoint);
         return endpoint;
