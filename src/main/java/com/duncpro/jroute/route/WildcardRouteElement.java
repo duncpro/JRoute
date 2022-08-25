@@ -10,6 +10,9 @@ public final class WildcardRouteElement extends RouteElement {
     }
 
     @Override
+    public int hashCode() { return 1; }
+
+    @Override
     public String toString() {
         return "*";
     }

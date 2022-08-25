@@ -7,7 +7,8 @@
     <list default="true" id="377cceba-08b5-47e5-aead-ba5d96f09aa9" name="Default Changelist" comment="add Route.resolve">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/TreeRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/router/TreeRouter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/route/WildcardRouteElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/duncpro/jroute/route/WildcardRouteElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/duncpro/jroute/rest/RestRouterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/duncpro/jroute/rest/RestRouterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +106,7 @@
       <recent name="com.duncpro.jroute" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.JRoute [build]">
+  <component name="RunManager" selected="Gradle.RestRouterTest.testMultipleWildcardsSmoke">
     <configuration name="JRoute [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -192,18 +193,20 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TreeRouterTest.prefix" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RestRouterTest.testMultipleWildcardsSmoke" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.duncpro.jroute.router.TreeRouterTest.prefix&quot;" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.duncpro.jroute.rest.RestRouterTest.testMultipleWildcardsSmoke&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -215,11 +218,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.RestRouterTest.testMultipleWildcardsSmoke" />
         <item itemvalue="Gradle.JRoute [build]" />
         <item itemvalue="Gradle.JRoute [test]" />
         <item itemvalue="Gradle.ParameterizedRouteTest" />
         <item itemvalue="Gradle.JRoute [publishAllPublicationsToMavenRepository]" />
-        <item itemvalue="Gradle.TreeRouterTest.prefix" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +239,8 @@
       <workItem from="1660427010812" duration="5460000" />
       <workItem from="1660432755377" duration="1607000" />
       <workItem from="1660558378320" duration="486000" />
-      <workItem from="1660558937116" duration="1055000" />
+      <workItem from="1660558937116" duration="1767000" />
+      <workItem from="1661416846967" duration="1363000" />
     </task>
     <servers />
   </component>
